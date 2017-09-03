@@ -10,14 +10,6 @@ h1, h3, h5 {
   font-family: 'Roboto Slab', serif;
 }
 
-.top {
-  background-color: #E5F3F2;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 h1 {
   color: #6D6E71;
   font-size: 56px;
@@ -28,87 +20,106 @@ h1 strong {
   color: #00A79D;
 }
 
+h3 {
+  color: #6D6E71;
+  font-size: 18px;
+}
+
 fieldset {
   margin: 20px 0 0;
-  width: 55vw;
   max-width: 600px;
+  width: 55vw;
 }
 
 input {
-  width: 100%;
-  padding: 8px 4px 6px;
   font-size: 16px;
   margin-bottom: 15px;
+  padding: 8px 4px 6px;
+  width: 100%;
 }
 
-.save {
-  width: 100%;
-  font-size: 16px;
-  padding: 9px;
-  background-color: #00A79D;
-  color: #FFF;
-  border: none;
+button {
   transition: all 400ms ease;
 }
 
+div {
+  align-items: center;
+  color: #6D6E71;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top {
+  align-items: center;
+  background-color: #E5F3F2;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.save {
+  background-color: #00A79D;
+  border: none;
+  color: #FFF;
+  font-size: 16px;
+  padding: 9px;
+  width: 100%;
+}
+
 .save:hover {
-    background-color: #045E55;
-    transition: all 400ms ease;
+  background-color: #045E55;
 }
 
 .idea-holder {
-    max-width: 600px;
-    width: 55vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 600px;
+  width: 55vw;
 }
 
 .idea-card {
-    max-width: 600px;
-    width: 100%;
-    margin: 10px auto;
-}
-
-h3 {
-    font-size: 18px;
-    color: #6D6E71;
-    display: inline-block;
+  margin: 10px auto;
+  max-width: 600px;
+  width: 100%;
 }
 
 .delete-button, .upvote, .downvote{
-    background-color: transparent;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    border: none;
-    width: 30px;
-    height: 30px;
+  border: none;
+  height: 25px;
+  width: 25px;
 }
 
 .delete-button {
-    float: right;
-    background-image: url(../assets/delete.svg);
+  align-self: flex-end;
+  background: url(../assets/delete.svg);
+}
+
+.delete-button:hover {
+  background: url(../assets/delete-hover.svg)
 }
 
 .upvote {
-    background-image: url(../assets/upvote.svg);
+  background: url(../assets/upvote.svg);
+}
+.upvote:hover {
+  background: url(../assets/upvote-hover.svg);
 }
 
 .downvote {
-        background-image: url(../assets/downvote.svg);
+  margin: 0 20px 0 25px;
+  background: url(../assets/downvote.svg);
+}
+.downvote:hover {
+  background: url(../assets/downvote-hover.svg);
 }
 
-.body {
-    margin: 10px 0;
-    color: #939598;
+.idea-body {
+  margin: 15px 0 20px;
+  color: #939598;
 }
 
-div {
-    display: flex;
-}
-
-h5, p {
-
+.quality-container {
+  width: 40%;
 }
