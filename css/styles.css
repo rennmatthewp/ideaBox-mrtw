@@ -36,22 +36,79 @@ fieldset {
 
 input {
   width: 100%;
-  padding: 9px 4px 6px;
-}
-
-input::placeholder {
+  padding: 8px 4px 6px;
   font-size: 16px;
+  margin-bottom: 15px;
 }
 
- .body-input {
-   margin: 15px auto;
-}
-
-.submit {
+.save {
   width: 100%;
   font-size: 16px;
   padding: 9px;
   background-color: #00A79D;
   color: #FFF;
   border: none;
+  transition: all 400ms ease;
+}
+
+.save:hover {
+    background-color: #045E55;
+    transition: all 400ms ease;
+}
+
+.idea-holder {
+    max-width: 600px;
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.idea-card {
+    max-width: 600px;
+    width: 100%;
+    margin: 10px auto;
+}
+
+h3 {
+    font-size: 18px;
+    color: #6D6E71;
+    display: inline-block;
+}
+
+.delete-button, .upvote, .downvote{
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    width: 30px;
+    height: 30px;
+}
+
+.delete-button {
+    float: right;
+    background-image: url(../assets/delete.svg);
+}
+
+.upvote {
+    background-image: url(../assets/upvote.svg);
+}
+
+.downvote {
+        background-image: url(../assets/downvote.svg);
+}
+
+.body {
+    margin: 10px 0;
+    color: #939598;
+}
+
+div {
+    display: flex;
+}
+
+h5, p {
+
 }
