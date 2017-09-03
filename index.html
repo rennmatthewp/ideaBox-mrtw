@@ -2,12 +2,42 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/reset.css">
+    <!-- <link rel="stylesheet" href="css/reset.css"> -->
     <link rel="stylesheet" href="css/styles.css">
-    <title>ideaBox</title>
+    <title>ideabox</title>
   </head>
   <body>
-
+    <main>
+      <header>
+        <h1>
+          <strong>idea</strong>box</h1>
+      </header>
+      <section>
+        <form action="index.html" method="post">
+          <fieldset>
+            <input type="text" class="title-input" placeholder="Title" required autofocus>
+            <input type="text" class="body-input" placeholder="Body" required>
+            <button type="submit" class="submit" disabled>save</button>
+          </fieldset>
+        </form>
+      </section>
+      <section class="idea-holder">
+        <form>
+          <fieldset>
+            <input type="search">
+          </fieldset>
+        </form>
+        <article>
+          <h3 class="title">Example Idea 1</h3>
+          <button class="delete-button"></button>
+          <p class="body"></p>
+          <button class="upvote"><img src="" alt="circle button with up arrow"></button>
+          <button class="downvote"><img src="" alt="circle button with down arrow"></button>
+          <h5>quality</h5>
+          <p class="quality">swill</p>
+        </article>
+      </section>
+    </main>
     <script type="text/javascript" src="scripts.js"></script>
   </body>
 </html>
