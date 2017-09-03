@@ -1,3 +1,57 @@
-.delete-button {
-    background: url("ideaBox-mrtw/ideaBox-assets/delete.svg");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h3, h5 {
+  font-family: 'Roboto Slab', serif;
+}
+
+.top {
+  background-color: #E5F3F2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #6D6E71;
+  font-size: 56px;
+  width: fit-content;
+}
+
+h1 strong {
+  color: #00A79D;
+}
+
+fieldset {
+  margin: 20px 0 0;
+  width: 55vw;
+  max-width: 600px;
+}
+
+input {
+  width: 100%;
+  padding: 9px 4px 6px;
+}
+
+input::placeholder {
+  font-size: 16px;
+}
+
+ .body-input {
+   margin: 15px auto;
+}
+
+.submit {
+  width: 100%;
+  font-size: 16px;
+  padding: 9px;
+  background-color: #00A79D;
+  color: #FFF;
+  border: none;
 }
