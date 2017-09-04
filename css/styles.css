@@ -57,7 +57,7 @@ div {
   padding: 20px;
 }
 
-.save {
+.save-button {
   background-color: #00A79D;
   border: none;
   color: #FFF;
@@ -66,7 +66,7 @@ div {
   width: 100%;
 }
 
-.save:hover {
+.save-button:hover {
   background-color: #045E55;
 }
 
