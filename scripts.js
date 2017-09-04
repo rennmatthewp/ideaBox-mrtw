@@ -1,6 +1,6 @@
 $('.idea-input-form').on('submit', function(e) {
   e.preventDefault();
-  getIdeaValues();
+  createIdeaCard()
 });
 
 function Idea(title, body, quality = [0], id = Date.now()){
@@ -36,8 +36,8 @@ function fillIdeaCard (newIdea) {
             <div class="quality-container">
               <button class="upvote"></button>
               <button class="downvote"></button>
-              <h5>${newQuality}</h5>
-              <p class="quality">swill</p>
+              <h5>quality:</h5>
+              <p class="quality">${newQuality}</p>
             </div>
           </article>`)
 };

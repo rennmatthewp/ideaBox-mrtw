@@ -14,6 +14,7 @@ h1 {
   color: #6D6E71;
   font-size: 56px;
   width: fit-content;
+  margin: auto;
 }
 
 h1 strong {
@@ -26,7 +27,7 @@ h3 {
 }
 
 fieldset {
-  margin: 20px 0 0;
+  margin: 20px auto 0;
   max-width: 600px;
   width: 55vw;
 }
@@ -50,11 +51,9 @@ div {
 }
 
 .top {
-  align-items: center;
   background-color: #E5F3F2;
-  display: flex;
-  flex-direction: column;
   padding: 20px;
+  width: 100vw;
 }
 
 .save-button {
@@ -68,15 +67,6 @@ div {
 
 .save-button:hover {
   background-color: #045E55;
-}
-
-.idea-holder {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  max-width: 600px;
-  width: 55vw;
 }
 
 .idea-card {
