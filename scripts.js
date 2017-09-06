@@ -14,13 +14,16 @@ function getIdeaValues() {
   var ideaTitle = $('.title-input').val();
   var ideaBody = $('.body-input').val();
   var newIdea = new Idea(ideaTitle, ideaBody);
-  console.log(newIdea);
   return newIdea;
 };
 
 function createIdeaCard() {
   $('.idea-holder').prepend(fillIdeaCard(getIdeaValues()));
 };
+
+function deleteIdea(id) {
+  $('#' + id).remove();
+}
 
 function fillIdeaCard (newIdea) {
   var newTitle = newIdea.title;
@@ -30,7 +33,7 @@ function fillIdeaCard (newIdea) {
   return (`<article id="${newId}" class="idea-card">
             <div>
               <h3 class="title">${newTitle}</h3>
-              <button class="delete-button"></button>
+              <button class="delete-button" onclick="deleteIdea(${newId})"></button>
             </div>
             <p class="idea-body">${newBody}</p>
             <div class="quality-container">
@@ -39,5 +42,6 @@ function fillIdeaCard (newIdea) {
               <h5>quality:</h5>
               <p class="quality">${newQuality}</p>
             </div>
-          </article>`)
+          </article>
+          <hr>`)
 };
