@@ -1,5 +1,3 @@
-
-
 $('.idea-input-form').on('submit', function(e) {
   e.preventDefault();
   createIdeaCard();
@@ -23,22 +21,29 @@ function getIdeaValues() {
 function createIdeaCard() {
   var idea = getIdeaValues()
   $('.idea-holder').prepend(fillIdeaCard(idea));
+  displayQuality(idea);
   var allIdeas = getFromLocalStorage()
   allIdeas.push(idea)
   saveToLocalStorage(allIdeas)
-};
+}
 
 function deleteIdea(id) {
   $('#' + id).remove();
 }
 
-function getQuality(qualityNumber) {
+function displayQuality(idea) {
   var qualityArray = ['swill', 'plausible', 'genius'];
-    return qualityArray[qualityNumber];
+  $('#' + idea.id).find('.quality').text(qualityArray[idea.quality])
 }
 
-function upvote(id){
-  
+function vote(id, change){
+  var allTheThings = getFromLocalStorage();
+  var idea = findIdea(id, allTheThings);
+  if((idea.quality + change) <= 2 && (idea.quality + change) >= 0){
+    idea.quality += change;
+  }
+  saveToLocalStorage(allTheThings);
+  displayQuality(idea);
 }
 
 function saveToLocalStorage(allTheIdeas){
@@ -46,15 +51,14 @@ function saveToLocalStorage(allTheIdeas){
 }
 
 function getFromLocalStorage(){
-  if (JSON.parse(localStorage.getItem("ideaArray"))) {
+  if (localStorage.getItem('ideaArray')) {
     return JSON.parse(localStorage.getItem("ideaArray"))
   } else {
     return []
   }
 };
 
-function findIdea(id){
-  var allTheThings = getFromLocalStorage();
+function findIdea(id, allTheThings){
   return allTheThings.find(function(idea){
     return idea.id === id
   });
@@ -65,7 +69,7 @@ function fillIdeaCard (newIdea) {
   var newTitle = newIdea.title;
   var newBody = newIdea.body;
   var newId = newIdea.id;
-  var newQuality = getQuality(newIdea.quality);
+  // var newQuality = getQuality(newIdea.quality);
 
   return (`<article id="${newId}" class="idea-card">
             <div>
@@ -74,10 +78,10 @@ function fillIdeaCard (newIdea) {
             </div>
             <p class="idea-body">${newBody}</p>
             <div class="quality-container">
-              <button class="upvote" onclick="upvote(${newId})"></button>
-              <button class="downvote"></button>
+              <button class="upvote" onclick="vote(${newId}, 1)"></button>
+              <button class="downvote" onclick="vote(${newId}, -1)"></button>
               <h5>quality:</h5>
-              <p class="quality">${newQuality}</p>
+              <p class="quality"></p>
             </div>
           </article>
           <hr>`)
