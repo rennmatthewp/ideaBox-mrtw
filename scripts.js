@@ -38,7 +38,7 @@ function getQuality(qualityNumber) {
 }
 
 function upvote(id){
-
+  
 }
 
 function saveToLocalStorage(allTheIdeas){
@@ -52,6 +52,14 @@ function getFromLocalStorage(){
     return []
   }
 };
+
+function findIdea(id){
+  var allTheThings = getFromLocalStorage();
+  return allTheThings.find(function(idea){
+    return idea.id === id
+  });
+
+}
 
 function fillIdeaCard (newIdea) {
   var newTitle = newIdea.title;
