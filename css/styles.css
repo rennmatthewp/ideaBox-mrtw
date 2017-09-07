@@ -35,6 +35,9 @@ input {
   width: 100%;
   border: solid 1px #D1D3D4;
 }
+input::placeholder {
+  color: #939598;
+}
 button {
   transition: all 400ms ease;
 }
@@ -117,6 +120,21 @@ hr {
   h1 {
     font-size: 24px;
   }
-.top {
-  padding: 15px;
+  .top {
+    padding: 15px;
+  }
+  fieldset {
+    margin: 15px auto;
+    width: 90vw;
+
+  }
+
+  input {
+    padding: 4px;
+    font-size: 20px;
+  }
+
+  .body-input {
+    padding-bottom: 60px;
+  }
 }
