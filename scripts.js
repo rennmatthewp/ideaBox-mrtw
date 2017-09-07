@@ -25,23 +25,32 @@ function deleteIdea(id) {
   $('#' + id).remove();
 }
 
+function getQuality (qualityNumber) {
+  var qualityArray = ['swill', 'plausible', 'genius'];
+    return qualityArray[qualityNumber];
+}
+
 function fillIdeaCard (newIdea) {
   var newTitle = newIdea.title;
   var newBody = newIdea.body;
   var newId = newIdea.id;
-  var newQuality = newIdea.quality;
+  var newQuality = getQuality(newIdea.quality);
+
   return (`<article id="${newId}" class="idea-card">
             <div>
               <h3 class="title">${newTitle}</h3>
               <button class="delete-button" onclick="deleteIdea(${newId})"></button>
             </div>
             <p class="idea-body">${newBody}</p>
-            <div class="quality-container">
+            <div class="quality-button-container">
               <button class="upvote"></button>
               <button class="downvote"></button>
+            </div>
+            <div class="quality-string-container">
               <h5>quality:</h5>
               <p class="quality">${newQuality}</p>
             </div>
+            <hr>
           </article>
-          <hr>`)
+          `)
 };
