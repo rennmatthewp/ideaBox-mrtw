@@ -44,6 +44,11 @@ div {
   display: flex;
   justify-content: space-between;
 }
+
+hr {
+  color: #D1D2D3;
+
+}
 .top {
   background-color: #E5F3F2;
   padding: 20px;
@@ -94,12 +99,19 @@ div {
   margin: 15px 0 20px;
   color: #939598;
 }
+
+.quality-line {
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
 .quality-button-container, .quality-string-container {
   display: inline-block;
 }
 .quality {
   display: inline-block;
 }
+
 
 @media screen and (max-width: 500px) {
   h1 {

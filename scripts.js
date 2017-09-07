@@ -42,13 +42,15 @@ function fillIdeaCard (newIdea) {
               <button class="delete-button" onclick="deleteIdea(${newId})"></button>
             </div>
             <p class="idea-body">${newBody}</p>
-            <div class="quality-button-container">
-              <button class="upvote"></button>
-              <button class="downvote"></button>
-            </div>
-            <div class="quality-string-container">
-              <h5>quality:</h5>
-              <p class="quality">${newQuality}</p>
+            <div class="quality-line">
+              <div class="quality-button-container">
+                <button class="upvote"></button>
+                <button class="downvote"></button>
+              </div>
+              <div class="quality-string-container">
+                <h5>quality:</h5>
+                <p class="quality">${newQuality}</p>
+              </div>
             </div>
             <hr>
           </article>
