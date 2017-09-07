@@ -15,6 +15,7 @@ function getIdeaValues() {
   var ideaTitle = $('.title-input').val();
   var ideaBody = $('.body-input').val();
   var newIdea = new Idea(ideaTitle, ideaBody);
+  storeIdea(newIdea);
   return newIdea;
 };
 
@@ -62,3 +63,7 @@ function fillIdeaCard (newIdea) {
           </article>
           `)
 };
+
+function storeIdea(ideaObject) {
+  localStorage.setItem(ideaObject.id, JSON.stringify(ideaObject))
+}
