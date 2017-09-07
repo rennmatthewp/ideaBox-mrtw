@@ -1,46 +1,57 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Open Sans', sans-serif;
 }
+
 h1, h3, h5 {
   font-family: 'Roboto Slab', serif;
 }
+
 h1 {
   color: #6D6E71;
   font-size: 56px;
-  width: fit-content;
   margin: auto;
+  width: fit-content;
 }
+
 h1 strong {
   color: #00A79D;
 }
+
 h3 {
   color: #6D6E71;
   font-size: 18px;
 }
+
 h5 {
   display: inline-block;
 }
+
 fieldset {
   margin: 20px auto 0;
   max-width: 600px;
   width: 55vw;
 }
+
 input {
+  border: solid 1px #D1D3D4;
   font-size: 16px;
   margin-bottom: 15px;
   padding: 8px 4px 6px;
   width: 100%;
-  border: solid 1px #D1D3D4;
 }
+
 input::placeholder {
   color: #939598;
 }
+
 button {
   transition: all 400ms ease;
 }
+
 div {
   align-items: center;
   color: #6D6E71;
@@ -50,13 +61,14 @@ div {
 
 hr {
   color: #D1D2D3;
-
 }
+
 .top {
   background-color: #E5F3F2;
   padding: 20px;
   width: 100vw;
 }
+
 .save-button {
   background-color: #00A79D;
   border: none;
@@ -65,42 +77,52 @@ hr {
   padding: 9px;
   width: 100%;
 }
+
 .save-button:hover {
   background-color: #045E55;
 }
+
 .idea-card {
   margin: 10px auto;
   max-width: 600px;
   width: 55vw;
 }
+
 .delete-button, .upvote, .downvote{
   border: none;
   height: 25px;
   width: 25px;
 }
+
 .delete-button {
   align-self: flex-end;
   background: url(../assets/delete.svg);
 }
+
 .delete-button:hover {
   background: url(../assets/delete-hover.svg)
 }
+
 .upvote {
   background: url(../assets/upvote.svg);
 }
+
 .upvote:hover {
   background: url(../assets/upvote-hover.svg);
 }
+
 .downvote {
   margin: 0 20px 0 25px;
   background: url(../assets/downvote.svg);
 }
+
 .downvote:hover {
   background: url(../assets/downvote-hover.svg);
 }
+
 .idea-body {
-  margin: 15px 0 20px;
   color: #939598;
+  margin: 15px 0 20px;
 }
 
 .quality-line {
@@ -111,32 +133,34 @@ hr {
 .quality-button-container, .quality-string-container {
   display: inline-block;
 }
+
 .quality {
   display: inline-block;
 }
-
 
 @media screen and (max-width: 500px) {
   h1 {
     font-size: 28px;
   }
+
   .top {
     padding: 15px;
   }
+
   fieldset {
     margin: 15px auto;
     width: 90vw;
-
   }
 
   input {
-    padding: 4px;
     font-size: 20px;
+    padding: 4px;
   }
 
   .body-input {
     padding-bottom: 60px;
   }
+  
   .idea-card {
     width: 90vw;
   }
