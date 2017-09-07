@@ -1,6 +1,7 @@
 $('.idea-input-form').on('submit', function(e) {
   e.preventDefault();
-  createIdeaCard()
+  createIdeaCard();
+  clearFields();
 });
 
 function Idea(title, body, quality = [0], id = Date.now()){
@@ -23,6 +24,11 @@ function createIdeaCard() {
 
 function deleteIdea(id) {
   $('#' + id).remove();
+}
+
+function clearFields() {
+  $('.title-input').val('').focus();
+  $('.body-input').val('');
 }
 
 function getQuality (qualityNumber) {
