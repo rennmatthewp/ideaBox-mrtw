@@ -137,4 +137,7 @@ hr {
   .body-input {
     padding-bottom: 60px;
   }
+  .idea-card {
+    width: 90vw;
+  }
 }
