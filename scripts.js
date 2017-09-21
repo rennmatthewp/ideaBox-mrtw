@@ -1,6 +1,4 @@
-// $(document).ready(function() {
-//     fillIdeaCard(getStoredIdeas());
-// });
+
 
 
 $('.idea-input-form').on('submit', function(e) {
@@ -68,10 +66,10 @@ function deleteIdea(id) {
 }
 
 Idea.storeIdea = function (ideaObject) {
-  localStorage.setItem(ideaObject.id, JSON.stringify(ideaObject))
+  var storedIdeas = [localStorage.setItem(ideaObject.id, JSON.stringify(ideaObject))]
 }
 
-function getStoredIdeas() {
-  if (localStorage.length > 0)
-  return JSON.parse(localStorage.getItem(Object.keys(localStorage)));
-}
+function getStoredIdeas(key) {
+  console.log(JSON.parse(localStorage.getItem(key)));
+};
+getStoredIdeas(Object.keys);
