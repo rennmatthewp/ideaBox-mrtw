@@ -1,40 +1,34 @@
+
+
+
 $('.idea-input-form').on('submit', function(e) {
   e.preventDefault();
   createIdeaCard();
   clearFields();
 });
 
-function Idea(title, body, quality = [0], id = Date.now()){
-  this.title = title;
-  this.body = body;
-  this.quality = quality;
-  this.id = id;
+function createIdeaCard() {
+  $('.idea-holder').prepend(fillIdeaCard(getIdeaValues()));
 };
 
 function getIdeaValues() {
   var ideaTitle = $('.title-input').val();
   var ideaBody = $('.body-input').val();
   var newIdea = new Idea(ideaTitle, ideaBody);
-  storeIdea(newIdea);
+  Idea.storeIdea(newIdea);
   return newIdea;
 };
 
-function createIdeaCard() {
-  $('.idea-holder').prepend(fillIdeaCard(getIdeaValues()));
+var Idea = function(title, body, quality = [0], id = Date.now()){
+  this.title = title;
+  this.body = body;
+  this.quality = quality;
+  this.id = id;
 };
-
-function deleteIdea(id) {
-  $('#' + id).remove();
-}
-
-function clearFields() {
-  $('.title-input').val('').focus();
-  $('.body-input').val('');
-}
 
 function getQuality (qualityNumber) {
   var qualityArray = ['swill', 'plausible', 'genius'];
-    return qualityArray[qualityNumber];
+  return qualityArray[qualityNumber];
 }
 
 function fillIdeaCard (newIdea) {
@@ -42,7 +36,6 @@ function fillIdeaCard (newIdea) {
   var newBody = newIdea.body;
   var newId = newIdea.id;
   var newQuality = getQuality(newIdea.quality);
-
   return (`<article id="${newId}" class="idea-card">
             <div>
               <h3 class="title">${newTitle}</h3>
@@ -60,10 +53,23 @@ function fillIdeaCard (newIdea) {
               </div>
             </div>
             <hr>
-          </article>
-          `)
+            </article>`)
 };
 
-function storeIdea(ideaObject) {
-  localStorage.setItem(ideaObject.id, JSON.stringify(ideaObject))
+function clearFields() {
+  $('.title-input').val('').focus();
+  $('.body-input').val('');
 }
+
+function deleteIdea(id) {
+  $('#' + id).remove();
+}
+
+Idea.storeIdea = function (ideaObject) {
+  var storedIdeas = [localStorage.setItem(ideaObject.id, JSON.stringify(ideaObject))]
+}
+
+function getStoredIdeas(key) {
+  console.log(JSON.parse(localStorage.getItem(key)));
+};
+getStoredIdeas(Object.keys);
